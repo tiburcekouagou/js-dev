@@ -1,13 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>un chronomètre en secondes avec setTimeout</title>
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
+
+    <style>
+        *,
+        *::before,
+        *::after{
+            box-sizing: border-box;
+        }
+        body{background-color: #ddd;}
+
+        .contenaire h1{
+            font-size: 3rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-style: italic;
+        }
+        .contenaire{
+            max-width: 900px;
+            margin-inline: auto;
+            margin-top: 20rem;
+            text-align: center;
+            background-color: rgb(234, 82, 82);
+            
+        }
+
+        .contenaire p {
+            width: 50%;
+            margin-left: 25%;
+            padding: 0.5rem 1rem;
+            font-size: 5rem;
+            border-radius: 0.5rem;
+            background-color: rgb(200, 154, 244);
+        }
+
+        .contenaire button{
+            font-size: 2rem;
+            margin: 1rem 2rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 0.5rem;
+            transition-duration: 2s;
+        }
+         .contenaire button:hover{
+            color: #ddd;
+            background-color: rgb(13, 11, 11);
+
+         }
+
+    </style>
 </head>
+
 <body>
-    <h1>Un chronomètre en secondes</h1>
-    <p id="chrono"></p>
+    <header></header>
+    <main class="contenaire">
+        <h1>Un chronomètre en secondes</h1>
+        
+        <p id="chrono"></p>
+        
+        <button id="b3">Démarre</button>
+        <button id="b4">Arrêt</button>
+
+    </main>
+    <footer></footer>
 </body>
+
 </html>
