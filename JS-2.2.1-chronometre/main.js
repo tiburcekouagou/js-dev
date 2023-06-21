@@ -105,9 +105,12 @@ document.addEventListener("DOMContentLoaded", function () {
     */
     start.addEventListener("click", function () {
         chrono();
+<<<<<<< HEAD
         start.style.display = "none";
         stop.style.display = "block";
 
+=======
+>>>>>>> ffa04093fe5f42f33175033d341ba3596399453e
     });
 
     /**
@@ -115,9 +118,12 @@ document.addEventListener("DOMContentLoaded", function () {
     */
     stop.addEventListener("click", function () {
         clearTimeout(intervalId);
+<<<<<<< HEAD
         stop.style.display = "none";
         start.style.display = "block";
 
+=======
+>>>>>>> ffa04093fe5f42f33175033d341ba3596399453e
     })
 
     /**
@@ -133,8 +139,11 @@ document.addEventListener("DOMContentLoaded", function () {
         minCounter = 0;
         secondCounter = 0;
         millisecondsCounter = 0;
+<<<<<<< HEAD
         stop.style.display = "block";
         start.style.display = "block";
+=======
+>>>>>>> ffa04093fe5f42f33175033d341ba3596399453e
     })
 
 
