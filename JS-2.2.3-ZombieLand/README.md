@@ -2,10 +2,10 @@
 
 ## Enoncé
 Nous allons utiliser requestAnimationFrame pour animer un Zombie qui se réveil.
-Pour cela vous avez à votre disposition une planche de sprites comportant toutes les étapges de l'animation du zombie (11 exactement).
+Pour cela vous avez à votre disposition une planche de sprites comportant toutes les étapes de l'animation du zombie (11 exactement).
 
 ### Fonctionnement attendu
-Au chargement de la page le Zombie sort de terre puis disparait et l'aniomation tourne en boucle.
+Au chargement de la page le Zombie sort de terre puis disparait et l'animation tourne en boucle.
 
 ### Remarques
 

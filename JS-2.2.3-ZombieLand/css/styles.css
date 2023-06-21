@@ -7,4 +7,15 @@ body
 {
     width:100px;
     height:100px;
+    background-color: #fff;
+}
+
+.movezombie{
+    animation: anime1 .5s infinite;
+    animation-direction: reverse;
+}
+
+@keyframes anime1 {
+    from{ left: 0;}
+    to{left: -100px;}
 }
