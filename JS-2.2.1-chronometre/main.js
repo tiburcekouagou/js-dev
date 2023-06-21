@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     resetBtn.addEventListener("click", reset);
-    stopBtn.addEventListener("click", stop)
+    stopBtn.addEventListener("click", stop);
 
 
 
