@@ -61,8 +61,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     /*Button Reset - Ajout de l'évènement clique*/
-    resetButton.addEventListener("click", function (event) {
-        event.preventDefault();
+    resetButton.addEventListener("click", function () {
+        chronoShower.innerHTML = "00";
+        minutes.innerHTML = "00";
+        centieme.innerHTML = "00";
         centiemeCounter = 0;
         secondeCounter = 0;
         minuteCounter = 0;
