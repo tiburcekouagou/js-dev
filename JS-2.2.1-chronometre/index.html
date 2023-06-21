@@ -4,10 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>un chronomètre en secondes avec setTimeout</title>
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
+    <style>
+        .minuter{
+            display: flex;
+            gap: 2rem;
+            border: solid 2px #ccc;
+            background-color: rgb(19, 164, 221);
+            padding: 1.5rem;
+            justify-content: center;
+            margin-inline: 25rem;
+            font-size: 2rem;
+        }
+        h1{
+            text-align: center;
+        }
+        .bouton{
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        .bt{
+            font-size: 1.5rem;
+            padding-block: 0.5rem;
+            padding-inline: 1rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            border: none;
+            transition: all 1s ease-in-out;
+        }
+        .bt:hover{
+            background-color: rgb(19, 164, 221);
+            color: white;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <h1>Un chronomètre en secondes</h1>
     <p id="chrono"></p>
+    <div class="minuter">
+        <p id="minute"> mn : </p>
+        <p id="second"> s : </p>
+        <p id="m-second"> ms </p>
+    </div>
+    <div class="bouton">
+        <button id="start" class="bt"> Start </button>
+        <button id="stop" class="bt"> Stop </button>
+        <button id="reset" class="bt"> Reset </button>
+    </div>
 </body>
 </html>
