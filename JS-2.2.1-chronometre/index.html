@@ -4,10 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>un chronomètre en secondes avec setTimeout</title>
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
+    <style>
+        body{
+            text-align: center;
+        }
+        h1{
+            font-family: cursive;
+            color: blue;
+        }
+        p{
+           color: white;
+            border: 2px solid rgba(0, 0, 255, 0.7);
+            padding: 2rem;
+            border-radius: 50px;
+            background: rgba(0, 0, 255, 0.7);
+        }
+        button{
+            color: blue;
+            background-color: rgba(135, 206, 235, 0.5);
+            border: 1px solid skyblue;
+            margin-right: 2rem;
+            padding: 1em;
+            box-shadow: 3px 3px 10px;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+        button:hover{
+         background-color: white;
+         color: skyblue;
+        }
+    </style>
 </head>
 <body>
     <h1>Un chronomètre en secondes</h1>
     <p id="chrono"></p>
+    <div>
+        <button id="debut">Start</button>
+        <button id="arret">Stop</button>
+        <button id="retour">Reset</button>
+    </div>
 </body>
 </html>
