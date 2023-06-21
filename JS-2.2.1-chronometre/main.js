@@ -116,7 +116,6 @@ document.addEventListener("DOMContentLoaded", function () {
         clearTimeout(intervalId);
         stop.style.display = "none";
         start.style.display = "block";
-
     })
 
     /**
@@ -134,6 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
         millisecondsCounter = 0;
         stop.style.display = "block";
         start.style.display = "block";
+
     })
 
 
