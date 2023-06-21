@@ -1,13 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr-FR">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>un chronomètre en secondes avec setTimeout</title>
-    <script src="main.js"></script>
+    <meta name="description" content="image-reponsive">
+    <meta name="keyword" content="image-reponsive">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="icon"
+        href="../../../../../../../1-COURS-D'INTEGRATION/1-HTML-CSS/1-MODULES/Module-1/3-Template-v1/instructions/logo-3wa.png">
+    <title>DOM</title>
+
 </head>
+
 <body>
-    <h1>Un chronomètre en secondes</h1>
-    <p id="chrono"></p>
+    <header class="header">
+        <h1>Javascript</h1>
+        <p>Un chronomètre en secondes</p>
+    </header>
+    <main class="container">
+        <section>
+            <button id="stop">Arrêter</button>
+            <button id="start">Démarrer</button>
+            <button id="reset">Reset</button><br><br>
+            <p id="chrono">
+                <span id="min">
+                    <span id="minD">0</span><!--  --><span id="minU">0</span>
+                </span> :
+                <span id="">
+                    <span id="secD">0</span><!--  --><span id="secU">0</span>
+                </span> :
+                <span id="cent">
+                    <span id="centD">0</span><!--  --><span id="centU">0</span>
+                </span>
+            </p>
+        </section>
+    </main>
+    <footer class="footer">
+        <br>
+        <a rel="license" href="3wacademy.com">
+            <img src="../../../../../../../1-COURS-D'INTEGRATION/1-HTML-CSS/1-MODULES/Module-1/3-Template-v1/instructions/logo-3wa.png"
+                alt="Mon logo" width="70">
+        </a>
+
+        <p>Ce matériel pédagogique est la propriété de la <a rel="license" href="3wacademy.com">3W Academy.</a> Cet
+            exercice a été réalisé par <a href="#">Stephane pereck</a>.</p>
+    </footer>
+    <script src="./main.js" defer></script>
 </body>
+
 </html>
