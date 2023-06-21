@@ -29,15 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         }
                     }
                 }
-                if (heure <= 9) {
-                    heure = "0"+ heure
-                }
-                if (min <= 9) {
-                   min = "0"+ min
-                }
-                if (secondes <= 9) {
-                    secondes = "0" + secondes
-                }
                 result.innerText = heure + " : " + min + " : "+ secondes + " : " + cent;
             }, 1);
         }
