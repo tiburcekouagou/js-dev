@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 compteurCentU++;
                 spanCentU.innerHTML = compteurCentU;
                 chrono();
-            }, 16.67);
+            }, (1000/60));
             console.log(timeOut);
             if (compteurCentU > 9) {
                 compteurCentU = 0;
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
         clearTimeout(timeOut);
         buttonStart.style.display = "block"
         buttonStop.style.display = "none"
-    })
+    });
     buttonReset.addEventListener("click", function () {
 
         // compteur centaines
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // compteur heures
         compteurHeuU = 0;
         compteurHeuD = 0;
-        
+
         spanCentU.innerHTML = compteurCentU++;
         spanCentD.innerHTML = compteurCentD++;
 
@@ -122,6 +122,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         spanHeuU.innerHTML = compteurHeuU++;
         spanHeuD.innerHTML = compteurHeuD++;
-    })
+    });
 
 });
