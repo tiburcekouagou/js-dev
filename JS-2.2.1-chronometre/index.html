@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>un chronomètre en secondes avec setTimeout</title>
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
+    <style>
+        body {
+            text-align: center;
+        }
+        h1 {
+            border: 2px solid gray;
+            background-image: linear-gradient (green, greenyellow, rgb(57, 73, 57));
+        
+        }
+        .bg-color {
+            background-color: green;
+            color: aqua;
+            margin-block: 2rem;
+            pa-block: 2rem;
+        }
+    </style>
 </head>
+
 <body>
     <h1>Un chronomètre en secondes</h1>
-    <p id="chrono"></p>
+    <div class="style">
+        <div class="bg-color">
+            <span id="minutes">00</span>:
+            <span id="secondes">00</span>:
+            <span id="tierces">00</span>
+        </div>
+        <div class="vitesse">
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+            <button id="reset">Reset</button>
+        </div>
+    </div>
 </body>
+
 </html>
