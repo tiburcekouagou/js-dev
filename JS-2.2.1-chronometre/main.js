@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let minuteCounter = 0;
     let timeout;
     let click = 0;
+    
     // LES FONCTIONS DECLAREES 
     //-----------------Fonction de démarrage-------------------------
     const start = () => {
@@ -28,12 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
     //-----------------Fonction de vérification-------------------------
 
     function mSecond() {
-        // milliCounter = parseInt(milliCounter);
-        // secondCounter = parseInt(secondCounter);
-        // minuteCounter = parseInt(minuteCounter);
-
         milliCounter++;
-
+        
         if (milliCounter === 100) {
             secondCounter++;
             milliCounter = 0;
@@ -57,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             min.innerText = minuteCounter + ":";
         }
-        timeout = setTimeout(mSecond, 10)
+        timeout = setTimeout(mSecond, 10);
     }
 
 
