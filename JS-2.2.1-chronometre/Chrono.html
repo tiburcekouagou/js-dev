@@ -1,74 +1,17 @@
-
-
-
-
-
-
-
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-
-    <title>Chronomètre</title>
-
-    <script>
-
-        let timer; // letiable pour stocker l'identifiant du chronomètre
-
-        let seconds = 0; // letiable pour compter les secondes écoulées
-
-        function startTimer() {
-
-            timer = setInterval(updateTimer, 1000); // Lance le chronomètre toutes les secondes
-
-        }
-
-        function stopTimer() {
-
-            clearInterval(timer); // Arrête le chronomètre
-
-        }
-
-        function resetTimer() {
-
-            seconds = 0; // Réinitialise les secondes écoulées
-
-            updateTimer(); // Met à jour l'affichage du chronomètre
-
-        }
-
-        function updateTimer() {
-
-            seconds++; // Incrémente les secondes écoulées
-
-            let minutes = Math.floor(seconds / 60); // Calcule les minutes
-
-            let remainingSeconds = seconds % 60; // Calcule les secondes restantes
-
-            // Affiche le chronomètre dans l'élément ayant l'id "timer"
-
-            document.getElementById("timer").textContent = minutes + "m " + remainingSeconds + "s";
-
-        }
-
-    </script>
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jsript.js"></script>
+    <title>Document</title>
 </head>
-
 <body>
-
     <h1>Chronomètre</h1>
-
-    <div id="timer">0m 0s</div>
-
+    <div id="chrono">0m 0s</div>
     <button onclick="startTimer()">Démarrer</button>
-
     <button onclick="stopTimer()">Arrêter</button>
-
     <button onclick="resetTimer()">Réinitialiser</button>
-
 </body>
-
 </html>

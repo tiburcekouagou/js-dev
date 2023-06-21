@@ -17,5 +17,5 @@ function updateTimer() {
     seconds++; 
     let minutes = Math.floor(seconds / 60); 
     let remainingSeconds = seconds % 60; 
-    document.getElementById("timer").textContent = minutes + "m " + remainingSeconds + "s";
+    document.getElementById("chrono").textContent = minutes + "m " + remainingSeconds + "s";
 }
