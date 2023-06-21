@@ -12,17 +12,32 @@ document.addEventListener("DOMContentLoaded", function () {
     let compteurMinU = 1;
     let compteurMinD = 1;
 
-    let timeOut;
+    // compteur heures
+    let compteurHeuU = 1;
+    let compteurHeuD = 1;
+
+    let timeOut; // fonction
+
+    // compteur centaines
     let spanCentU = document.getElementById("centU");
     let spanCentD = document.getElementById("centD");
+
+    // compteur secondes
     let spanSecU = document.getElementById("secU");
     let spanSecD = document.getElementById("secD");
+
+    // compteur minutes
     let spanMinU = document.getElementById("minU");
     let spanMinD = document.getElementById("minD");
+
+    // compteur heures
+    let spanHeuU = document.getElementById("heuU");
+    let spanHeuD = document.getElementById("heuD");
+
+    // button start, stop et reset   
     const buttonStart = document.getElementById("start");
     const buttonStop = document.getElementById("stop");
     const buttonReset = document.getElementById("reset");
-
 
     buttonStart.addEventListener("click", function () {
         buttonStart.style.display = "none";
@@ -32,14 +47,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 compteurCentU++;
                 spanCentU.innerHTML = compteurCentU;
                 chrono();
-            }, 10);
+            }, 16.67);
             console.log(timeOut);
             if (compteurCentU > 9) {
                 compteurCentU = 0;
                 spanCentU.innerHTML = compteurCentU;
                 spanCentD.innerHTML = compteurCentD++;
             }
-            if (compteurCentD > 10) {
+            if (compteurCentD > 6) {
                 compteurCentD = 0;
                 spanCentD.innerHTML = compteurCentD++;
                 spanSecU.innerHTML = compteurSecU++;
@@ -58,6 +73,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 compteurMinU = 0;
                 spanMinU.innerHTML = compteurMinU++;
                 spanMinD.innerHTML = compteurMinD++;
+            }
+            if (compteurMinD > 6) {
+                compteurMinD = 0;
+                spanMinD.innerHTML = compteurMinD++;
+                spanHeuU.innerHTML = compteurHeuU++;
+            }
+            if (compteurHeuU > 10) {
+                compteurHeuU = 0;
+                spanHeuU.innerHTML = compteurHeuU++;
+                spanHeuD.innerHTML = compteurHeuD++;
             }
         };
 
@@ -82,12 +107,21 @@ document.addEventListener("DOMContentLoaded", function () {
         compteurMinU = 0;
         compteurMinD = 0;
 
+        // compteur heures
+        compteurHeuU = 0;
+        compteurHeuD = 0;
+        
         spanCentU.innerHTML = compteurCentU++;
         spanCentD.innerHTML = compteurCentD++;
+
         spanSecU.innerHTML = compteurSecU++;
         spanSecD.innerHTML = compteurSecD++;
+
         spanMinU.innerHTML = compteurMinU++;
         spanMinD.innerHTML = compteurMinD++;
+
+        spanHeuU.innerHTML = compteurHeuU++;
+        spanHeuD.innerHTML = compteurHeuD++;
     })
 
 });
