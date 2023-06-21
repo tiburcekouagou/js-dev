@@ -5,9 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>un chronomètre en secondes avec setTimeout</title>
     <script src="main.js"></script>
+
+    <style>
+        /* body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        } */
+
+        .container {
+            max-width: 980px;
+            margin-inline: auto;
+            padding-block: 1rem 2rem;
+            background-color: #eee;
+            box-shadow: 0px 0px 10px;
+            margin-top: 30vh;
+            text-align: center;
+        }
+
+        .div-chrono {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            margin-inline: auto;
+            margin-bottom: 30px;
+            background-color: rgb(108, 11, 11);
+           
+        }
+
+        .div-chrono div {
+            display: flex;
+            padding: 1rem;
+            width: 50%;
+            height: 50px;
+            background-color: #bbb;
+            border-radius: 10px;
+        }
+
+        .div-chrono div p {
+            flex-basis: calc(100% / 3);
+            margin: 0;
+            padding: .7rem;
+            font-size: 1.5rem;
+            background-color: #eee;
+            color: black;
+        }
+
+        .div-chrono p:first-child {
+            border : 1px solid red;
+        }
+
+        .div-chrono p:last-child {
+            border : 1px solid rgb(102, 133, 11);
+        }
+    </style>
 </head>
 <body>
-    <h1>Un chronomètre en secondes</h1>
-    <p id="chrono"></p>
+    <div class="container">
+
+        <h1>Un chronomètre en secondes</h1>
+        <div class="div-chrono">
+            <div>
+                <p id="minutes">00</p>
+                <p id="chrono">00</p>
+                <p id="centieme-seconde">00</p>
+            </div>
+        </div>
+        <button id = "start">Start / Stop</button>
+        <button id = "reset">Reset</button>
+
+    </div>
 </body>
 </html>
