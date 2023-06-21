@@ -71,22 +71,28 @@ document.addEventListener("DOMContentLoaded", () => {
         secondCounter = 0;
         minuteCounter = 0;
         clearTimeout(timeout);
+        startBtn.style.display = "block"
+        stopBtn.style.display = "none"
 
     }
 
     //-----------------Fonction de pause-------------------------
     const stop = () => {
         clearTimeout(timeout);
-        startBtn.innerText = "Start" ;
+        startBtn.innerText = "Start";
+        startBtn.style.display = "block"
+        stopBtn.style.display = "none"
     }
 
     //-----------------Les actions effectuées-------------------------
     startBtn.addEventListener("click", () => {
-        if(startBtn.innerText === "Start"){
+        if (startBtn.innerText === "Start") {
             start();
-            startBtn.innerText = "Stop"
+            startBtn.innerText = "Stop";
+            startBtn.style.display = "none"
+            stopBtn.style.display = "block"
         }
-       
+
     });
 
     resetBtn.addEventListener("click", reset);
