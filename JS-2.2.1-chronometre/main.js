@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
          * Incrémentation de la seconde lorsque la tiece passe à 100.
          */
         if (millisecondsCounter === 60) {
+        if (millisecondsCounter === 60) {
             secondCounter++
             millisecondsCounter = 0;
         }
@@ -105,6 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
     */
     start.addEventListener("click", function () {
         chrono();
+        stop.style.display = "block";
         stop.style.display = "block";
         start.style.display = "none";
     });
