@@ -4,10 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>un chronomètre en secondes avec setTimeout</title>
+    <link rel="stylesheet" href="./style.css">
     <script src="main.js"></script>
 </head>
 <body>
-    <h1>Un chronomètre en secondes</h1>
-    <p id="chrono"></p>
+    <div id="chrono">
+        <p class="hours">00<strong>:</strong></p>
+        <p class="minutes">00 <strong>:</strong></p>
+        <p class="seconds">00 <strong>:</strong></p>
+        <p class="tierces">00</p>
+    </div>    
+    <div class="btn">
+        <button id="start">START</button>
+        <button id="stop">STOP</button>
+        <button id="restart">RESTART</button>
+    </div>
 </body>
 </html>
