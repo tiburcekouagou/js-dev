@@ -94,6 +94,20 @@
         .flex p {
             width: calc(100% / 3);
         }
+
+        .bouton{
+            display: flex;
+            justify-content: center;
+            gap: 15rem;
+        }
+        .button{
+            position: relative;
+            
+        }
+
+        .bouton .button button{
+            position: absolute;
+        }
     </style>
 </head>
 
@@ -109,8 +123,10 @@
                 <p id="millisecond">00</p>
             </div>
             <div class="bouton">
-                <button class="start">Start</button>
-                <button class="stop">Stop</button>
+                <div class="button">
+                    <button class="stop">Stop</button>
+                    <button class="start">Start</button>
+                </div>
                 <button class="reset">Reset</button>
             </div>
         </main>
