@@ -5,13 +5,18 @@ body {
     align-items: center;
     flex-direction: column;
     background-image: url("./FormulaOne_Button_2.jpg");
-    background-size: cotain;
     background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.btn{
+    display: flex;
+    gap: 1rem;
 }
 
 #chrono {
     border: 2px solid whitesmoke;
-    background-color: rgba(222, 184, 135, 0.616);
+    background-color: blanchedalmond;
     border-radius: 8px;
     height: 10vh;
     display: flex;
@@ -32,15 +37,6 @@ button {
     padding: 1rem;
     border-radius: 8px;
     border-color: rgba(0, 0, 0, 0.575);
-    display: inline-block;
-}
-
-.btn {
-    display: flex;
-    gap: 1rem;
-}
-button:hover {
-    cursor: pointer;
 }
 
 button:first-child {
