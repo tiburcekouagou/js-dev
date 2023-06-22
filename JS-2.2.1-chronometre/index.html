@@ -9,24 +9,63 @@
     <style>
         body {
             text-align: center;
+            color: white;  
         }
         h1 {
             border: 2px solid gray;
+            margin-inline: 20rem;
+            margin-bottom: 5rem;
             background-image: linear-gradient (green, greenyellow, rgb(57, 73, 57));
         
         }
         .bg-color {
             background-color: green;
             color: aqua;
-            margin-block: 2rem;
-            padding-block: 2rem;
+            margin-block: 3rem;
+            padding-block: 5rem;
+            font-size: 3rem;
+            margin-inline: 20rem;
+            border: 1px solid ;
+            border-radius: 50%;
+
+        }
+        #start {
+            font-size: 1.5rem;
+            color: white;
+            padding-inline: 2rem;
+            padding-block: 1rem;
+            background-color: red;
+        }
+        #stop {
+            font-size: 1.5rem;
+            color: white;
+            padding-inline: 2rem;
+            padding-block: 1rem;
+            background-color: green;
+        }
+        #reset {
+            font-size: 1.5rem;
+            color: white;
+            padding-inline: 2rem;
+            padding-block: 1rem;
+            background-color: gray;
+        }
+        #stop,
+        #start,
+        #reset {
+            margin-inline: 1rem;
+            border-radius: .5rem .5rem;
+        }
+        .style {
+            background-color: black;
+            padding-block: 3rem;
         }
     </style>
 </head>
 
 <body>
-    <h1>Un chronomètre en secondes</h1>
     <div class="style">
+        <h1>Un chronomètre en secondes</h1>
         <div class="bg-color">
             <span id="minutes">00</span>:
             <span id="secondes">00</span>:
