@@ -1,0 +1,43 @@
+body{
+    background: #555 url(../../HIGHFIVE/Intégration/module4/M10-Portfolio/img/fond.png) repeat ;
+}
+main {
+    max-width: 800px;
+    margin-inline:auto;
+    font-family: monospace;
+    font-size: 5rem;
+    text-align: center;
+}
+h1{
+    font-size: 3rem;
+    font-family: fjallaOne;
+}
+button{
+    padding:1rem 2rem;
+    font-size: 1.5rem;
+}
+#start {
+    padding-inline: 1.9rem;
+}
+.les_boutons{
+    position: relative;
+    top : -27px;
+    left: -120px;
+}
+.les_boutons button{
+    position : absolute;
+}
+.chrono_nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#reset{
+    position:relative;
+    left: 150px;
+}
+@keyframes boom {
+    100% {
+        transform: scale(1.1);
+    }
+}
