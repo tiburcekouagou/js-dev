@@ -1,49 +1,50 @@
 'use strict'
 
-let tierce = 0;
-let seconds = 0;
-let minutes = 0;
-let hours = 0;
-let timeoutId = 0;
-
-let toTwoDigits = (num) => {
-
-    let numToStr = num.toString();
-     
-    if(numToStr.length === 1){
-
-        return "0" + numToStr;
-
-    } else {
-
-        return numToStr;
-    }
+let chrono = {
+    tierce : 0,
+    seconds : 0,
+    minutes : 0,
+    hours : 0
 }
 
-function startChrono(){
+let timeoutId = 0;
 
-    chrono.innerHTML = toTwoDigits(hours) + " : " +  toTwoDigits(minutes) + " : " + toTwoDigits(seconds) + " : " + toTwoDigits(tierce);
+let formatNumber = (num) => {
+     
+    return (num < 10) ? "0" + num : num;
 
-    tierce++;
+}
 
-    if (tierce === 60) {
+function updateDisplay(arg){
 
-        tierce = 0; 
-        seconds++; 
+    chrono.innerHTML = formatNumber(arg)
+
+}
+
+function startChrono(hours, minutes, seconds, tierces){
+
+    chrono.innerHTML = formatNumber(chrono.hours) + " : " +  formatNumber(chrono.minutes) + " : " + formatNumber(chrono.seconds) + " : " + formatNumber(chrono.tierce);
+
+    chrono.tierce++;
+
+    if (chrono.tierce === 60) {
+
+        chrono.tierce = 0; 
+        chrono.seconds++; 
 
     }
 
-    if (seconds === 59) {
+    if (chrono.seconds === 59) {
 
-        seconds = 0;
-        minutes++;
+        chrono.seconds = 0;
+        chrono.minutes++;
         
     }
     
-    if (minutes === 59) {
+    if (chrono.minutes === 59) {
 
-        minutes = 0;
-        hours++;
+        chrono.minutes = 0;
+        chrono.hours++;
         
     }
 
@@ -51,13 +52,13 @@ function startChrono(){
 
         startChrono();
 
-    }, 100 / 6)
+    }, 100 / 6);
 
 }
 
 function stopChrono() {
 
-    clearInterval(timeoutId)
+    clearInterval(timeoutId);
 
 }
 
@@ -65,7 +66,7 @@ function resetChrono() {
 
     clearInterval(timeoutId);
 
-    chrono.innerHTML = toTwoDigits(0) + " : " +  toTwoDigits(0) + " : " + toTwoDigits(0) + " : " + toTwoDigits(0);
+    chrono.innerHTML = formatNumber(0) + " : " +  formatNumber(0) + " : " + formatNumber(0) + " : " + formatNumber(0);
 
 }
 
@@ -79,18 +80,27 @@ document.addEventListener("DOMContentLoaded", () =>{
     
     startBtn.addEventListener("click", () =>{
 
+        startBtn.disabled = true;
+        endBtn.disabled = false;
+        resetBtn.disabled = false;
         startChrono();
         
     })
     
     endBtn.addEventListener("click", () =>{
 
+        startBtn.disabled = false;
+        endBtn.disabled = true;
+        resetBtn.disabled = false;
         stopChrono();
         
     })
     
     resetBtn.addEventListener("click", () =>{
 
+        startBtn.disabled = false;
+        endBtn.disabled = true;
+        resetBtn.disabled = true;
         resetChrono();
         
     })
