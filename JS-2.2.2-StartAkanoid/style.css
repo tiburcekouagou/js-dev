@@ -1,0 +1,50 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('./bgc2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+article {
+    margin-block: 2rem;
+}
+
+h2 {
+    text-transform: uppercase;
+}
+
+.ball img {
+    width: 70px;
+}
+
+
+.ball {
+    position: relative;
+    width: 70px;
+    /* aspect-ratio: 1; */
+    /* border: 1px solid black; */
+    border-radius: 50%;
+}
+
+.ball1 {
+    background-color: brown;
+}
+
+.ball2 {
+    background-color: rgb(0, 93, 199);
+}
+
+.ball3,
+.ball4 {
+    font-size: 70px;
+    /* background-color: rgb(57, 190, 9); */
+}
