@@ -7,4 +7,6 @@ body
 {
     width:100px;
     height:100px;
+    overflow: scroll;
+    /* border: solid 1px yellow; */
 }

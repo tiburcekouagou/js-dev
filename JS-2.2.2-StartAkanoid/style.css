@@ -30,8 +30,8 @@ h2 {
 .ball {
     position: relative;
     width: 70px;
-    /* aspect-ratio: 1; */
-    /* border: 1px solid black; */
+    aspect-ratio: 1;
+    border: 1px solid black;
     border-radius: 50%;
 }
 
@@ -46,5 +46,5 @@ h2 {
 .ball3,
 .ball4 {
     font-size: 70px;
-    /* background-color: rgb(57, 190, 9); */
+    background-color: rgb(57, 190, 9);
 }
