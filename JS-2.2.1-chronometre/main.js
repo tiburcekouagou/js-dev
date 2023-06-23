@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
 
-                result.innerText = doubl(chrono.hours) + " : " + doubl(chrono.min) + " : " + doubl(chrono.secondes) + " : " + doubl(chrono.cent);
+                result.innerText = `${ doubl(chrono.hours)} : ${ doubl(chrono.min)} : ${ doubl(chrono.secondes) } : ${ doubl(chrono.cent)}`;
 
             }, 10);
         }

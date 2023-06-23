@@ -1,22 +1,11 @@
 'use strict'
 document.addEventListener("DOMContentLoaded", function () {
-    const ball1 = document.querySelector("#ball1")
-    const ball2 = document.querySelector("#ball2")
-    const ball3 = document.querySelector("#ball3")
-    let widthWin = window.innerWidth;
-    // ball1.style.transform = "translateX(" + (widthWin - ball1.scrollWidth) + "px)"
-    const updateSpeed = 1000/1000;
-    let position = {
-        ball1 : 0, 
-        ball2 : 0, 
-        ball3 : 0 
-    }
     function getFullWidth(element) {
         // Récupérer les propriétés calculés de l'élément
         const styles = window.getComputedStyle(element);
 
         // Récupéérer la largeur, la bordure et le paddinge de l'élément
-        const width = element.offsetWidth; // elemnt.scrollWidth
+        const width = element.offsetWidth; // element.scrollWidth
         const borderLeftWidth = parseFloat(styles.borderLeftWidth)
         const borderRightWidth = parseFloat(styles.borderRightWidth);
         const paddingLeft = parseFloat(styles.paddingLeft);
@@ -25,27 +14,51 @@ document.addEventListener("DOMContentLoaded", function () {
         // Calculer la largeur totale incluant les bordures et les padding
         const fullWidth = width + borderLeftWidth + borderRightWidth + paddingLeft + paddingRight;
 
-        console.log(styles);
+        // console.log(styles);
         return fullWidth;
     }
-    function moveWithsetTimeout() {
-           position.ball1++;
-        if (position.ball1 >= (widthWin - getFullWidth(ball1))) {
-            position.ball1 = 0;
+    const ball3 = document.querySelector("#ball3")
+    let widthWin = window.innerWidth;
+    let heigthWin = window.innerHeight;
+    let degre = 45;
+    let position = 0;
+    let positionY = 0;
+    let clickCount = 0;
+    let sens = 1;
+    let sensY = 1;
+    let raf;
+    const updateSpeed = 1;
+
+
+
+    
+    let random = (min, max) => Math.floor((Math.random() * (max - min + 1)) + min );
+
+
+
+    let body = document.querySelector("body");
+    body.addEventListener("click", function () {
+        if (clickCount % 2 === 0) {
+            let moveWithRAF = () => {
+                position += 15 * sens ;
+                positionY+= 15 * sensY;
+                if (positionY <= 0 || positionY >= (heigthWin - getFullWidth(ball3)) ) {
+                    sensY *= -1;
+                    body.style.backgroundColor = "rgb(" +  random(0, 255) + "," + random(0, 255) + "," + random(0, 255) + ")";
+                } 
+                else if ( position <= 0 || position >= (widthWin - getFullWidth(ball3))) {
+                     sens *= -1;
+                     body.style.backgroundColor = "rgb(" +  random(0, 255) + "," + random(0, 255) + "," + random(0, 255) + ")";
+                }
+                ball3.style.transform = "translate(" + position + "px," + positionY + "px)";
+                raf = requestAnimationFrame(moveWithRAF);
+            }
+            moveWithRAF();
+        } else{
+            cancelAnimationFrame(raf);
         }
-        ball1.style.transform = "translateX(" + position.ball1 + "px)";
-        setTimeout(moveWithsetTimeout,updateSpeed);
-    }
-    function moveWithsetInterval() {
-            position.ball2++;
-        if (position.ball2 >= (widthWin - getFullWidth(ball1))) {
-            position.ball2 = 0;
-        }
-        ball2.style.transform = "translateX(" + position.ball2 + "px)";
-    }
-    // function moveWithsetTimeout() {
-        
-    // }
-    moveWithsetTimeout();
-    setInterval(moveWithsetInterval, updateSpeed);
+        clickCount++
+    });
+    console.log(heigthWin);
+    console.log(random(255));
 });

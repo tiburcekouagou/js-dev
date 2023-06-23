@@ -7,6 +7,10 @@
 body{
     margin: 0;
     padding: 0;
+    height: 90vh;
+    width: 90vw;
+    background-image: url(../HIGHFIVE/Intégration/maquette_diverse/img-hello-world-main/ressources/map-image.png);
+    background-color: black;
 }
 article {
     margin-block: 2rem;
@@ -16,18 +20,10 @@ article {
     position: relative;
     width: 100px;
     aspect-ratio: 1;
-    border: 2px solid black;
+    border: 1px solid rgb(255, 255, 255);
     border-radius: 50%;
 }
 
-.ball1 {
-    background-color: #0f0;
-}
-
-.ball2 {
-    background-color: #f00;
-}
-
 .ball3 {
-    background-color: #00f;
+    background-color: rgb(255, 255, 255);
 }
