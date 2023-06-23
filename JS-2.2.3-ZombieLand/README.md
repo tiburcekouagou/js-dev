@@ -6,7 +6,6 @@ Pour cela vous avez à votre disposition une planche de sprites comportant toute
 
 ### Fonctionnement attendu
 Au chargement de la page le Zombie sort de terre puis disparait et l'aniomation tourne en boucle.
-
 ### Remarques
 
  - Pour réussir cet exercice nous allons devoir calculer le taux de rafraichissement. A quelle vitesse allons nous rafraichir notre Zombie pour avoir une animation fluide et pas trop rapide ?
