@@ -6,7 +6,7 @@
     <title>un chronomètre en secondes avec setTimeout</title>
     <script src="main.js" defer></script>
     <style>
-        .minuter{
+        #chrono{
             display: flex;
             gap: 2rem;
             border: solid 2px #ccc;
@@ -18,6 +18,7 @@
         }
         h1{
             text-align: center;
+            color: aliceblue;
         }
         .bouton{
             display: flex;
@@ -38,20 +39,26 @@
             color: white;
             cursor: pointer;
         }
+        .container{
+            margin-top: 20rem;
+            text-align: center;
+        }
+        body{
+            background-image: url("../JS-2.2.1-chronometre/tony-webster-97532.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
     </style>
 </head>
 <body>
-    <h1>Un chronomètre en secondes</h1>
-    <p id="chrono"></p>
-    <div class="minuter">
-        <p id="minute"> mn : </p>
-        <p id="second"> s : </p>
-        <p id="m-second"> ms </p>
-    </div>
-    <div class="bouton">
-        <button id="start" class="bt"> Start </button>
-        <button id="stop" class="bt"> Stop </button>
-        <button id="reset" class="bt"> Reset </button>
+    <div class="container">
+        <h1>Un chronomètre en secondes</h1>
+        <p id="chrono"></p>
+        <div class="bouton">
+            <button id="start" class="bt"> Start </button>
+            <button id="stop" class="bt"> Stop </button>
+            <button id="reset" class="bt"> Reset </button>
+        </div>
     </div>
 </body>
 </html>
