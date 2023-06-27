@@ -1,41 +1,54 @@
 'use strict';
 document.addEventListener("DOMContentLoaded", function () {
-    const tombe = document.getElementById("zombietomb");
-    const marche = document.getElementById("walkingDead");
-    const cacheur = document.querySelector(".cacheur")
-    const image = document.querySelector(".tourne")
-    let marchePose = -100;
-    console.log(tombe);
     let position = 0;
-    let widthWin = window.innerWidth;
-    let iteration = 100;
-    let positionE = (widthWin - 1100);
-    function moveWithRAF() {
-        if (position >= 0 && position <= 1000) {
-            marche.style.display = "none";
-                position+=iteration;         
-                tombe.style.transform = "translateX(" + -position + "px)";
-            } else if (position > 1000 && marchePose < (widthWin - 100)){     
-                marchePose+=iteration;         
-                image.style.transform = "rotateY(" + 180 + "deg)";
-                marche.style.display = "block";
-                cacheur.style.display = "none";
-                tombe.style.display = "none";
-                marche.style.transform = "translateX(" + marchePose + "px)";
-            }
-            else if(marchePose >= (widthWin - 100)){
-                positionE += iteration;
-                tombe.style.display = "block";
-                marche.style.display = "none";
-                tombe.style.transform = "translateX(" + positionE + "px)";
-                cacheur.style.display = "block";
-                cacheur.style.left = 0;
-                
-            }
-        
+    let tombeMove = 0;
+    let sens = 1;
+    let enter;
+    let getOut;
+    const tombe = document.querySelector("#zombietomb");
+    function walkingDead() {
+        if (position <= 0 && position >= -900) {
+            tombe.style.display = "block";
+            position -= 100;
+            tombe.style.backgroundPosition = `${position}px`
+            setTimeout(() => {
+                getOut = requestAnimationFrame(walkingDead)
+            }, 100);
+        } 
     }
-    setInterval(() => {
-        moveWithRAF();
-    }, 500);
-    console.log(widthWin)
+    function sleepingDead() {
+        if (position <= -100) {
+            position += 100;
+            tombe.style.backgroundPosition = `${position}px`
+            setTimeout(() => {
+                enter = requestAnimationFrame(sleepingDead)
+            }, 100);
+            setTimeout(() => {
+                tombe.style.display = "none";
+            }, 1000);
+        } 
+    }
+        walkingDead();
+
+        document.addEventListener("keydown", function (marche) {
+            if (marche.key === "ArrowRight") {
+                sens = 1;
+                tombeMove+= 10 * sens;         
+                tombe.style.transform = `translateX(${tombeMove}px) rotateY(180deg)` ;
+            }
+            else if (marche.key === "ArrowLeft") {
+                sens = -1;
+                tombeMove+= 10 * sens;         
+                tombe.style.transform = `translateX(${tombeMove}px) rotateY(0deg)`;
+            }
+            else if(marche.key === "ArrowDown"){
+                cancelAnimationFrame(getOut)
+                  sleepingDead();
+            }
+            else if (marche.key === "ArrowUp") {
+                cancelAnimationFrame(enter)
+                walkingDead();
+            }   
+        })
+            
 });

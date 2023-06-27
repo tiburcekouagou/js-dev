@@ -1,64 +1,65 @@
 'use strict'
 document.addEventListener("DOMContentLoaded", function () {
-    function getFullWidth(element) {
-        // Récupérer les propriétés calculés de l'élément
-        const styles = window.getComputedStyle(element);
+    const canvas = document.getElementById("canvas");
+    let contexte = canvas.getContext('2d');
+    contexte.strokeStyle = "#000";
+    contexte.fillStyle = "#000";
+    contexte.fillRect (190, 25, 25, 255);
 
-        // Récupéérer la largeur, la bordure et le paddinge de l'élément
-        const width = element.offsetWidth; // element.scrollWidth
-        const borderLeftWidth = parseFloat(styles.borderLeftWidth)
-        const borderRightWidth = parseFloat(styles.borderRightWidth);
-        const paddingLeft = parseFloat(styles.paddingLeft);
-        const paddingRight = parseFloat(styles.paddingRight);
+   contexte.strokeRect(100, 75, 205, 25);
 
-        // Calculer la largeur totale incluant les bordures et les padding
-        const fullWidth = width + borderLeftWidth + borderRightWidth + paddingLeft + paddingRight;
+    contexte.font = "normal 25px OpenSans";
 
-        // console.log(styles);
-        return fullWidth;
-    }
-    const ball3 = document.querySelector("#ball3")
-    let widthWin = window.innerWidth;
-    let heigthWin = window.innerHeight;
-    let degre = 45;
-    let position = 0;
-    let positionY = 0;
-    let clickCount = 0;
-    let sens = 1;
-    let sensY = 1;
-    let raf;
-    const updateSpeed = 1;
+    // contexte.fillStyle = '#D125E6'
+
+    // contexte.strokeText("Charcr'art ! ", 150, 325);
+    contexte.fillText("Charcr'", 150, 325);
+    contexte.fillText("art !'", 150 + contexte.measureText("Charcr").width + 5, 325);
+    contexte.roundStyle = "#f00"
+    contexte.roundRect( 10, 30, 100, 100, [50])
+
+    // rec.addEventListener("click", function(){
+    //     body.style.backgroundColor = "red"
+    // })
+    // console.log(rec);
 
 
 
-    
-    let random = (min, max) => Math.floor((Math.random() * (max - min + 1)) + min );
 
 
 
-    let body = document.querySelector("body");
-    body.addEventListener("click", function () {
-        if (clickCount % 2 === 0) {
-            let moveWithRAF = () => {
-                position += 15 * sens ;
-                positionY+= 15 * sensY;
-                if (positionY <= 0 || positionY >= (heigthWin - getFullWidth(ball3)) ) {
-                    sensY *= -1;
-                    body.style.backgroundColor = "rgb(" +  random(0, 255) + "," + random(0, 255) + "," + random(0, 255) + ")";
-                } 
-                else if ( position <= 0 || position >= (widthWin - getFullWidth(ball3))) {
-                     sens *= -1;
-                     body.style.backgroundColor = "rgb(" +  random(0, 255) + "," + random(0, 255) + "," + random(0, 255) + ")";
-                }
-                ball3.style.transform = "translate(" + position + "px," + positionY + "px)";
-                raf = requestAnimationFrame(moveWithRAF);
-            }
-            moveWithRAF();
-        } else{
-            cancelAnimationFrame(raf);
-        }
-        clickCount++
-    });
-    console.log(heigthWin);
-    console.log(random(255));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
