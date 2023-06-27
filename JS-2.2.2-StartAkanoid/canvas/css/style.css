@@ -1,0 +1,7 @@
+body{
+    background-color: rgb(225, 221, 221);
+}
+
+#canvas{
+    border: 3px solid brown;
+}
