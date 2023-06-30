@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             zombie.style.marginTop = `${moveZombie}px`
         }
     })
+    
 
 })
 
