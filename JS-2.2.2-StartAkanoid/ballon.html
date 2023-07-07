@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ballon</title>
+    <style>
+        #ballon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background-color: #f00
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ballon source"></div>
+
+    /* let canvas = document.getElementById("canvas");
+    let incrusterImg = canvas.getContext('2d');
+
+    let myImage = document.getElementById("source");
+
+    myImage.onload = function () {
+        //On place l'image
+        myImage = document.getElementById("source");
+        incrusterImg.drawImage(myImage, 50, 50, 550,300);
+    }*/
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let canvas = document.getElementById("canvas");
+            let incrusterImg = canvas.getContext('2d');
+            let myImage = document.getElementById("source");
+
+         myImage.onload = function () {
+        //On place l'image
+        myImage = document.getElementById("source");
+        incrusterImg.drawImage(myImage, 50, 50, 550,300)
+
+
+
+            let maVariable2 = {
+                ballon: document.getElementById("ballon"),
+                ballonDirectionY: 1,
+                ballonPosY: 0,
+                speed: 1,
+                windowHeight: window.innerHeight,
+            }
+            let limitTopY = maVariable2.windowHeight - ballon.offsetHeight;
+
+            function animationBallon() {
+                maVariable2.ballonPosY += maVariable2.ballonDirectionY * maVariable2.speed;
+                if (maVariable2.ballonPosY >= limitTopY) {
+                    maVariable2.ballonPosY = limitTopY;
+                    maVariable2.ballonDirectionY = -1;
+                } else if (maVariable2.ballonPosY <= 0) {
+                    maVariable2.ballonPosY = 0;
+                    maVariable2.ballonDirectionY = 1;
+                }
+                ballon.style.transform =  "translateY(" + maVariable2.ballonPosY + "px)";
+                requestAnimationFrame(animationBallon)
+            }
+
+            animationBallon();
+        })
+
+    </script>
+</body>
+
+</html>

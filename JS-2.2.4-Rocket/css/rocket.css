@@ -9,29 +9,37 @@ body {
 
 #moon {
     position: absolute;
-    top:100px;
-    right:100px;
-    width:150px;
+    top: 100px;
+    right: 100px;
+    width: 150px;
 }
 
 #firing-button {
     position: absolute;
-    left:100px;
+    left: 100px;
     bottom: 100px;
-    width:75px;
-    height:75px;
+    width: 75px;
+    height: 75px;
     cursor: pointer;
+}
+#stop{
+    position: absolute;
+    left: 300px;
+    bottom: 100px;
+    width: 75px;
+    height: 75px;
+    cursor: pointer; 
 }
 
 .disabled {
-    filter:grayscale(100%);
+    filter: grayscale(100%);
     cursor: default;
 }
 
 #billboard {
     position: absolute;
-    left:50px;
-    top:100px;
+    left: 50px;
+    top: 100px;
     width: 314px;
     height: 200px;
     background-image: url('../images/billboard.png');
@@ -46,23 +54,44 @@ body {
     position: absolute;
     right: 15px;
     top: 15px;
-    
+
     font-size: 5rem;
     line-height: 170px;
-    color: white;  
+    color: white;
 }
 
 #launching-ramp {
     position: absolute;
-    bottom:0;
+    bottom: 0;
     left: 50%;
     transform: translate(calc(-50% - 150px));
 }
 
 #rocket {
+    display: none;
     position: absolute;
-    bottom:-207px;
-    width:200px;
+    bottom: -207px;
+    width: 200px;
+    left: 50%;
+    transform: translate(-50%);
+    transition: bottom 20s ease, left 15s, transform 5s 1s;
+}
+
+#rocket2 {
+    display: none;
+    position: absolute;
+    bottom: -207px;
+    width: 200px;
+    left: 50%;
+    transform: translate(-50%);
+    transition: bottom 20s ease, left 15s, transform 5s 1s;
+}
+
+#rocket3 {
+    display: non;
+    position: absolute;
+    bottom: -207px;
+    width: 200px;
     left: 50%;
     transform: translate(-50%);
     transition: bottom 20s ease, left 15s, transform 5s 1s;
@@ -78,8 +107,9 @@ body {
     position: absolute;
     background-color: #fff;
     border-radius: 50%;
-    z-index:-1;
+    z-index: -1;
 }
+
 
 .star.tiny {
     width: 1px;
